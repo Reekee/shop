@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="index.css">
 </head>
 <body>
-	<?php include('header.php'); ?>
+	<?php include('master/header.php'); ?>
 	<div id="body">
 		<div class="container-fluid">
 			<div class="row">
@@ -35,11 +35,11 @@
 						//echo $page;
 						//if($page=="home") include('home.php');
 						//else if($page=="product") include('product.php');
-						$file = $page.'.php';
+						$file = "pages/".$page.'.php';
 						if( is_file($file) ) {
 							include($file);
 						} else {
-							include("pagenotfound.php");
+							include("pages/pagenotfound.php");
 							//echo "Page Not Found.";
 						}
 					?>
@@ -47,6 +47,6 @@
 			</div>
 		</div>
 	</div>
-	<?php include('footer.php'); ?>
+	<?php include('master/footer.php'); ?>
 </body>
 </html>
