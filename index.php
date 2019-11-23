@@ -27,6 +27,7 @@
 						<a href="./?page=product" class="list-group-item list-group-item-action <?php if($page=="product") echo 'active'; ?>">ข้อมูลสินค้า</a>
 						<a href="./?page=member" class="list-group-item list-group-item-action <?php if($page=="member") echo 'active'; ?>">รายชื่อลูกค้า</a>
 						<a href="./?page=order" class="list-group-item list-group-item-action <?php if($page=="order") echo 'active'; ?>">การสั่งซื้อ</a>
+						<a href="./?page=receive" class="list-group-item list-group-item-action <?php if($page=="receive") echo 'active'; ?>">รับสั่งซื้อ</a>
 					</div>
 				</div>
 				<div class="col-md-9">
