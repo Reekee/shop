@@ -1,11 +1,13 @@
 <?php
 	session_start();
+	include_once("php/autoload.php");
 	if( !isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
-		echo '
-			<script>
-				location.href = "./login.php";
-			</script>
-		';
+		// echo '
+		// 	<script>
+		// 		location.href = "./login.php";
+		// 	</script>
+		// ';
+		linkTo("./login.php");
 	}
 	
 	if( isset($_GET["page"]) )

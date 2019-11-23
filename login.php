@@ -1,22 +1,25 @@
 <?php
     session_start();
+    include_once("php/autoload.php");
 	if( isset($_POST["btn-login"]) ) {
         $username = $_POST["username"];
         $password = $_POST["password"];
         if( $username=="admin" && $password=="1234" ) {
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;
-            echo '
-                <script>
-                    location.href = "./";
-                </script>
-            ';
+            // echo '
+            //     <script>
+            //         location.href = "./";
+            //     </script>
+            // ';
+            linkTo("./");
         } else {
-            echo '
-                <script>
-                    alert("รหัสไม่ถูกต้อง");
-                </script>
-            ';
+            // echo '
+            //     <script>
+            //         alert("รหัสไม่ถูกต้อง");
+            //     </script>
+            // ';
+            alert("รหัสไม่ถูกต้อง");
         }
     }
 ?>
