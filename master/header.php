@@ -7,7 +7,7 @@
         <ul class="navbar-nav mr-auto"></ul>
         <form class="form-inline my-2 my-lg-0">
             <div>สมชาย สมใจ</div>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ออกจากระบบ</button>
+            <a href="./logout.php" class="btn btn-outline-success my-2 my-sm-0">ออกจากระบบ</a>
         </form>
     </div>
 </nav>

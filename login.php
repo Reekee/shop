@@ -1,10 +1,24 @@
 <?php
-	if( isset($_GET["page"]) )
-		$page = $_GET["page"];
-	else 
-		$page = "home";
-
-	// $page = ( isset($_GET["page"]) ) ? $_GET["page"] : 'home';
+    session_start();
+	if( isset($_POST["btn-login"]) ) {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        if( $username=="admin" && $password=="1234" ) {
+            $_SESSION["username"] = $username;
+            $_SESSION["password"] = $password;
+            echo '
+                <script>
+                    location.href = "./";
+                </script>
+            ';
+        } else {
+            echo '
+                <script>
+                    alert("รหัสไม่ถูกต้อง");
+                </script>
+            ';
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,16 +40,16 @@
     </style>
 </head>
 <body>
-    <form id="frm-login">
+    <form action="" method="post" id="frm-login">
         <div class="form-group">
             <label for="username">ชื่อผู้ใช้งาน</label>
-            <input type="text" class="form-control" id="username" placeholder="ระบุชื่อผู้ใช้งาน">
+            <input type="text" class="form-control" id="username" name="username" placeholder="ระบุชื่อผู้ใช้งาน">
         </div>
         <div class="form-group">
             <label for="password">รหัสผ่าน</label>
-            <input type="password" class="form-control" id="password" placeholder="ระบุรหัสผ่าน">
+            <input type="password" class="form-control" id="password" name="password" placeholder="ระบุรหัสผ่าน">
         </div>
-        <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+        <button type="submit" name="btn-login" class="btn btn-primary">เข้าสู่ระบบ</button>
     </form>
 </body>
 </html>

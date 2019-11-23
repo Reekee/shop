@@ -1,4 +1,13 @@
 <?php
+	session_start();
+	if( !isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
+		echo '
+			<script>
+				location.href = "./login.php";
+			</script>
+		';
+	}
+	
 	if( isset($_GET["page"]) )
 		$page = $_GET["page"];
 	else 
