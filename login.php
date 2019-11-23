@@ -4,21 +4,18 @@
 	if( isset($_POST["btn-login"]) ) {
         $username = $_POST["username"];
         $password = $_POST["password"];
-        if( $username=="admin" && $password=="1234" ) {
+        $sql = "
+            SELECT * 
+            FROM admin 
+            WHERE username='".$username."' 
+                AND password='".$password."'
+        ";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $password;
-            // echo '
-            //     <script>
-            //         location.href = "./";
-            //     </script>
-            // ';
             linkTo("./");
         } else {
-            // echo '
-            //     <script>
-            //         alert("รหัสไม่ถูกต้อง");
-            //     </script>
-            // ';
             alert("รหัสไม่ถูกต้อง");
         }
     }

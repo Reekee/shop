@@ -2,14 +2,17 @@
 	session_start();
 	include_once("php/autoload.php");
 	if( !isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
-		// echo '
-		// 	<script>
-		// 		location.href = "./login.php";
-		// 	</script>
-		// ';
 		linkTo("./login.php");
 	}
-	
+	$sql = "
+		SELECT * 
+		FROM admin 
+		WHERE username='".$_SESSION["username"]."' 
+			AND password='".$_SESSION["password"]."'
+	";
+	$result = $conn->query($sql);
+	$admin = $result->fetch_assoc();
+
 	if( isset($_GET["page"]) )
 		$page = $_GET["page"];
 	else 
@@ -30,6 +33,9 @@
 <body>
 	<?php include('master/header.php'); ?>
 	<div id="body">
+		<?php
+			//var_dump($admin);
+		?>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
