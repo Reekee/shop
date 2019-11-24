@@ -44,7 +44,7 @@
 						<a href="./?page=product" class="list-group-item list-group-item-action <?php if($page=="product"||$page=="product-add"||$page=="product-edit") echo 'active'; ?>">ข้อมูลสินค้า</a>
 						<a href="./?page=member" class="list-group-item list-group-item-action <?php if($page=="member") echo 'active'; ?>">รายชื่อลูกค้า</a>
 						<a href="./?page=order" class="list-group-item list-group-item-action <?php if($page=="order") echo 'active'; ?>">การสั่งซื้อ</a>
-						<a href="./?page=receive" class="list-group-item list-group-item-action <?php if($page=="receive") echo 'active'; ?>">รับสินค้า</a>
+						<a href="./?page=receive" class="list-group-item list-group-item-action <?php if($page=="receive"||"receive-add") echo 'active'; ?>">รับสินค้า</a>
 						<a href="./?page=admin" class="list-group-item list-group-item-action <?php if($page=="admin") echo 'active'; ?>">ข้อมูลเจ้าหน้าที่</a>
 					</div>
 				</div>
