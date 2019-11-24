@@ -2,6 +2,9 @@ html {
     position: relative;
     min-height: 100%;
 }
+body {
+    padding-bottom: 70px;
+}
 #body {
     padding: 20px;
 }
