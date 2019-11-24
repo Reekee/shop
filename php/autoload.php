@@ -23,3 +23,11 @@
             </script>
         ';
     }
+    function generateId($table, $feild_id) {
+        global $conn;
+        $sql = "SELECT MAX(".$feild_id.") as id FROM `".$table."`";
+        $result = $conn->query($sql);
+        $data = $result->fetch_assoc();
+        $id = $data['id'] + 1;
+        return $id;
+    }
