@@ -20,10 +20,10 @@
                     <td>'.$row["product_name"].'</td>
                     <td>'.$row["price"].'</td>
                     <td>
-                        <img width="50" src="files/product/'.$row["img"].'">
+                        <img width="50" src="files/product/'.$row["img"].'?time='.time().'">
                     </td>
                     <td>
-                        <a href="#" class="btn btn-warning">แก้ไข</a>
+                        <a href="./?page=product-edit&product_id='.$row["product_id"].'" class="btn btn-warning">แก้ไข</a>
                         <a href="#" class="btn btn-danger">ลบ</a>
                     </td>
                 </tr>
