@@ -1,5 +1,5 @@
 <div style="margin-bottom: 20px;">
-    <a href="#" class="btn btn-success">เพิ่มสินค้า</a>
+    <a href="./?page=product-add" class="btn btn-success">เพิ่มสินค้า</a>
 </div>
 <table class="table">
     <tr>
